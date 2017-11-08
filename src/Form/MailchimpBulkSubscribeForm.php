@@ -78,22 +78,10 @@ class MailchimpBulkSubscribeForm extends FormBase {
     $messages = [];
 
     foreach($emails as $email) {
-      try {
-        $response = $this->mailchimp->subscribeEmail($email);
-      }
-      catch(\Exception $e) {
-      }
 
-      if (isset($response) && $response->getStatusCode() == '200') {
-        $messages['status'][] = $this->mailchimp->getSuccessMsg();
-        $messages['status'][] = $response->getBody();
-      }
-      else if ($e->getCode() == '400') {
-        $messages['warning'][] = $this->mailchimp->getAlreadSubscribedMsg();
-      }
-      else {
-        $messages['error'][] = $this->mailchimp->getSystemFailureMsg();
-      }
+      $response = $this->mailchimp->subscribeEmail($email);
+
+      $messages[$response['status']][] = $response['message'];
     }
 
     if (!empty($messages)) {
