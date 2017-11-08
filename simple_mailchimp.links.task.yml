@@ -1,0 +1,9 @@
+simple_mailchimp.settings:
+  title: 'Settings'
+  route_name: simple_mailchimp.settings
+  base_route: simple_mailchimp.settings
+
+simple_mailchimp.bulk_subscribe:
+  title: 'Bulk Subscription'
+  route_name: simple_mailchimp.bulk_subscribe
+  base_route: simple_mailchimp.settings

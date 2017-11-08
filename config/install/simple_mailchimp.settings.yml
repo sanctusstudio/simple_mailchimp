@@ -1,0 +1,6 @@
+api_key:
+list_id:
+data_center:
+success_msg: 'Thank you for subscribing to our site!'
+already_subscribed_msg: 'You were already subscribed to our list.'
+system_failure_msg: 'Our system was unable to subscribe you to our mailing list.'

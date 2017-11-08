@@ -1,0 +1,4 @@
+name: Simple Mailchimp
+description: Provides a subscription form to add emails to a mailchimp list.
+type: module
+core: 8.x

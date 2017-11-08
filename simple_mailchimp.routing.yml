@@ -1,0 +1,19 @@
+simple_mailchimp.settings:
+  path: '/admin/config/services/simple-mailchimp'
+  defaults:
+    _title: 'Mailchimp API Settings'
+    _form: '\Drupal\simple_mailchimp\Form\MailchimpSettingsForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+simple_mailchimp.bulk_subscribe:
+  path: '/admin/config/services/simple-mailchimp/bulk-subscribe'
+  defaults:
+    _title: 'Simple Mailchimp Bulk Subscription'
+    _form: '\Drupal\simple_mailchimp\Form\MailchimpBulkSubscribeForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
