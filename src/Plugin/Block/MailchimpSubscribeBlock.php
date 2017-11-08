@@ -9,6 +9,7 @@ namespace Drupal\simple_mailchimp\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\simple_mailchimp\Form\MailchimpSubscribeForm;
 
 /**
  * Provides a 'MailchimpSubscribeBlock' block.
@@ -77,7 +78,7 @@ class MailchimpSubscribeBlock extends BlockBase {
   public function build() {
 
     // Fetch form
-    $form = \Drupal::formBuilder()->getForm('Drupal\simple_mailchimp\Form\MailchimpSubscribeForm');
+    $form = \Drupal::formBuilder()->getForm(MailchimpSubscribeForm::class);
     $form['email']['#title'] = $this->configuration['email_label'];
     $form['email']['#placeholder'] = $this->configuration['email_placeholder'];
     $form['email']['#description'] = $this->configuration['email_description'];

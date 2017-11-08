@@ -1,0 +1,6 @@
+services:
+
+  # Defines simple mailchimp service of which requires no parameter for its constructor.
+  simple_mailchimp.mailchimp:
+    class: Drupal\simple_mailchimp\Mailchimp
+    arguments: ['@http_client', '@config.factory']

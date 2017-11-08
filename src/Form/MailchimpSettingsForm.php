@@ -96,7 +96,7 @@ class MailchimpSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
-    $this->config('simple_mailchimp.mailchimp')
+    $this->config('simple_mailchimp.settings')
       ->set('api_key', $form_state->getValue('api_key'))
       ->set('list_id', $form_state->getValue('list_id'))
       ->set('data_center', $form_state->getValue('data_center'))

@@ -7,8 +7,10 @@
 
 namespace Drupal\simple_mailchimp\Form;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\simple_mailchimp\MailchimpInterface;
 
 /**
  * Class MailchimpSubscribeForm.
@@ -16,6 +18,24 @@ use Drupal\Core\Form\FormStateInterface;
  * @package Drupal\simple_mailchimp\Form
  */
 class MailchimpSubscribeForm extends FormBase {
+
+  /**
+   * @var \Drupal\simple_mailchimp\MailchimpInterface
+   */
+  protected $mailchimp;
+
+  public function __construct(MailchimpInterface $mailchimp) {
+    $this->mailchimp = $mailchimp;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('simple_mailchimp.mailchimp')
+    );
+  }
   
   /**
    * {@inheritdoc}

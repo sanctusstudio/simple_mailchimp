@@ -1,0 +1,4 @@
+mailchimp configuration:
+  title: 'Configure Simple Mailchimp'
+mailchimp bulk subscribe:
+  title: 'Bulk Subscribe Emails to Mailchimp'
